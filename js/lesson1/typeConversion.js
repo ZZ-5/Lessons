@@ -53,7 +53,7 @@
 // console.log("c6 is ", c); // false
 
 // c = Boolean(null);
-// console.log("c7 is ", c); // true
+// console.log("c7 is ", c); // false
 
 // c = Boolean([]);
 // console.log("c8 is ", c); // true
