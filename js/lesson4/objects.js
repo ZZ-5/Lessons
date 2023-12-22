@@ -486,3 +486,40 @@
 // Измените код методов up, down и showStep таким образом, чтобы их вызов можно было сделать по цепочке, например так:
 
 // ladder.up().up().down().showStep().down().showStep(); // показывает 1 затем 0
+
+// let me = {
+//   name: "Pasha",
+//   lastName: "Ivannikov",
+//   age: 29,
+//   can: function (action) {
+//     console.log(
+//       `Привет, меня зовут ${this.name} ${this.lastName}, мне ${this.age} и я умею ${action}me `
+//     );
+//   },
+//   friend: {
+//     name: "Alex",
+//   },
+// };
+
+// let ivanov = {
+//   name1: "Alex",
+//   lastName1: "Ivanov",
+//   age1: 29,
+// };
+
+// ivanov.can = me.can;
+
+// me.weight = 88;
+// ivanov.weight = 90;
+
+// let obj = {};
+
+// for (let key in me) {
+//   obj[key] = me[key];
+// } - первый способ копирования обьекта
+
+// Object.assign(то, куда копируем, то, что копируем) -
+
+// Object.assign(obj, me, ivanov);
+
+// console.log(obj);
