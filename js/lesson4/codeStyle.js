@@ -1,3 +1,4 @@
+"user strict";
 // Шпаргалка: https://learn.javascript.ru/coding-style
 // Общие правила по стилю кода,
 

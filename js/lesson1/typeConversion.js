@@ -1,3 +1,4 @@
+"user strict";
 // Преобразования типов
 
 // const a = "Pasha";
