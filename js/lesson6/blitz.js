@@ -3,43 +3,43 @@
 // let me = "Pasha";
 // const friend = "Alesha";
 
-// friend = "AleshaI";
+// // friend = "AleshaI";
 
-// console.log(me); //
-// console.log(friend); //
+// // // console.log(me); //
+// // // console.log(friend); //
 
-// console.log(Boolean("string")); //
-// console.log(Boolean(0)); //
-// console.log(Boolean(-1)); //
-// console.log(Boolean(undefined)); //
-// console.log(Boolean(null)); //
-// console.log(Boolean(me)); //
+// console.log(Boolean("string")); // true
+// console.log(Boolean(0)); // false
+// console.log(Boolean(-1)); // true
+// console.log(Boolean(undefined)); // false
+// console.log(Boolean(null)); // false
+// console.log(Boolean(me)); // true
 
-// drink(10); //
-// ivanov(3); //
+// drink(10); // "Я могу выпить " 10 " литров пива");
+// ivanov(3); // wrang
 
 // function drink(liters) {
-//   console.log("Я могу выпить " + liters + " литров пива");
+//     console.log("Я могу выпить " + liters + " литров пива");
 // }
 
 // const ivanov = function (liters) {
-//   console.log("Я могу выпить + " + liters + " литров пива");
+//     console.log("Я могу выпить + " + liters + " литров пива");
 // };
 
 // Исправить код
 // let meObj = {
-//   name: "Pasha",
-//   lastName: "Ivannikov",
-//   age: 29,
-//   play: (game) => {
-//     console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
-//   },
+//     name: "Pasha",
+//     lastName: "Ivannikov",
+//     age: 29,
+//     play: function (game) {
+//         console.log(`Меня зовут ${this.name} и я умею играть в ${game}`);
+//     },
 // };
 
 // let ivanovObj = {
-//   name: "Alex",
-//   lastName: "Ivanov",
-//   age: 29,
+//     name: "Alex",
+//     lastName: "Ivanov",
+//     age: 29,
 // };
 
 // ivanovObj.play = meObj.play;
@@ -47,15 +47,23 @@
 // meObj.play("volleyball"); //
 // ivanovObj.play("fifa"); //
 
-// Создать дубликат обьекта
+// // Создать дубликат обьекта
 // let meObj = {
-//   name: "Pasha",
-//   lastName: "Ivannikov",
-//   age: 29,
-//   play: (game) => {
-//     console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
-//   },
+//     name: "Pasha",
+//     lastName: "Ivannikov",
+//     age: 29,
+//     play: (game) => {
+//         console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
+//     },
 // };
+
+// let meObj2 = {}
+
+// Object.assign(meObj2, meObj)
+
+// console.log(meObj2);
+
+// console.log(meObj === meObj2);
 
 // Добавить в обьект вес и рост
 // let meObj = {
@@ -66,6 +74,8 @@
 //     console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
 //   },
 // };
+
+
 
 // 1) Получить сумму всех числовых элементов массива. Использовать встроенный метод массивов
 // 2) Отфильтровать массив и положить в новый массив только числовые значения
