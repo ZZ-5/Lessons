@@ -1,12 +1,28 @@
 "use sctict";
 
-// let me = "Pasha";
-// const friend = "Alesha";
+// function myFunc() {
+//   var someVar = "qewqwe";
 
-// // friend = "AleshaI";
+//   console.log(someVar);
+// }
 
-// // // console.log(me); //
-// // // console.log(friend); //
+// myFunc();
+
+// console.log(a);
+// console.log(d);
+// console.log(someVar);
+
+// console.log(me);
+// console.log(friend);
+
+// let me = "Pasha"; //
+// const friend = "Alesha"; //
+// var qwe = "me";
+
+// friend = "AleshaI";
+
+// console.log(me); // Pasha
+// console.log(friend); // Ошибка
 
 // console.log(Boolean("string")); // true
 // console.log(Boolean(0)); // false
@@ -15,37 +31,37 @@
 // console.log(Boolean(null)); // false
 // console.log(Boolean(me)); // true
 
-// drink(10); // "Я могу выпить " 10 " литров пива");
-// ivanov(3); // wrang
+// drink(10); // Я могу выпить 10 литров пива;
+// ivanov(3); // wrong
 
 // function drink(liters) {
-//     console.log("Я могу выпить " + liters + " литров пива");
+//   console.log("Я могу выпить " + liters + " литров пива");
 // }
 
 // const ivanov = function (liters) {
-//     console.log("Я могу выпить + " + liters + " литров пива");
+//   console.log("Я могу выпить + " + liters + " литров пива");
 // };
 
 // Исправить код
-// let meObj = {
-//     name: "Pasha",
-//     lastName: "Ivannikov",
-//     age: 29,
-//     play: function (game) {
-//         console.log(`Меня зовут ${this.name} и я умею играть в ${game}`);
-//     },
-// };
+let meObj = {
+  name: "Pasha",
+  lastName: "Ivannikov",
+  age: 29,
+  play: function (game) {
+    console.log(`Меня зовут ${this.name} и я умею играть в ${game}`);
+  },
+};
 
-// let ivanovObj = {
-//     name: "Alex",
-//     lastName: "Ivanov",
-//     age: 29,
-// };
+let ivanovObj = {
+  name: "Alex",
+  lastName: "Ivanov",
+  age: 29,
+};
 
-// ivanovObj.play = meObj.play;
+ivanovObj.play = meObj.play;
 
-// meObj.play("volleyball"); //
-// ivanovObj.play("fifa"); //
+meObj.play("volleyball"); //
+ivanovObj.play("fifa"); //
 
 // // Создать дубликат обьекта
 // let meObj = {
@@ -74,8 +90,6 @@
 //     console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
 //   },
 // };
-
-
 
 // 1) Получить сумму всех числовых элементов массива. Использовать встроенный метод массивов
 // 2) Отфильтровать массив и положить в новый массив только числовые значения
