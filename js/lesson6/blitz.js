@@ -83,29 +83,59 @@ ivanovObj.play("fifa"); //
 
 // Добавить в обьект вес и рост
 // let meObj = {
-//   name: "Pasha",
-//   lastName: "Ivannikov",
-//   age: 29,
-//   play: (game) => {
-//     console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
-//   },
+//     name: "Pasha",
+//     lastName: "Ivannikov",
+//     age: 29,
+//     play: (game) => {
+//         console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
+//     },
 // };
+
+// meObj.weight = 88;
+// meObj.height = 185;
+
+// console.log(meObj);
 
 // 1) Получить сумму всех числовых элементов массива. Использовать встроенный метод массивов
 // 2) Отфильтровать массив и положить в новый массив только числовые значения
 // 3) Отсортировать полученный массив по убыванию
 // let arr = [1, 2, 4, 5, null, undefined, "str", "Pasha", 6, 7, 8, 9, 10];
 
+// let sum = arr.reduce((res, item) => {
+//     if (typeof item == 'number') {
+//         return res + item;
+//     } else return res
+// }, 0);
+
+// let arr2 = arr.filter((i) => {
+//     if (typeof i == 'number') {
+//         return i
+//     }
+// }).sort((a, b) => b - a)
+
+// console.log(sum);
+
 // Извлечь из массива первые два элемента. Остальные положить в отдельный массив.
 // let arr = ["My", "name", "is", "Pasha", "and", "i"];
+
+// let [a, b, ...c] = arr;
+// console.log(a)
+// console.log(b)
+// console.log(c)
 
 // Получить из обьекта meObj имя, фамилию, возраст
 // let name = "Alex";
 // let meObj = {
-//   name: "Pasha",
-//   lastName: "Ivannikov",
-//   age: 29,
-//   play: (game) => {
-//     console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
-//   },
+//     name: "Pasha",
+//     lastName: "Ivannikov",
+//     age: 29,
+//     play: (game) => {
+//         console.log(`Меня зовут ${meObj.name} и я умею играть в ${game}`);
+//     },
 // };
+
+// let { name: myName, lastName, age } = meObj;
+
+// console.log(myName);
+// console.log(lastName)
+// console.log(age)
