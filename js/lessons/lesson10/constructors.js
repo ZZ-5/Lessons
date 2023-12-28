@@ -4,15 +4,17 @@
 // Имя функции-конструктора должно начинаться с большой буквы.
 // Функция-конструктор должна выполняться только с помощью оператора "new".
 
-// function User(name) {
+// function User(name, lastName) {
 //   this.name = name;
+//   this.lastname = "Ivannikov";
 //   this.isAdmin = false;
 // }
 
-// let user = new User("Jack");
+// let user = new User("Pasha");
+// let user2 = new User("Ivanov");
 
-// console.log(user.name); // Jack
-// console.log(user.isAdmin); // false
+// console.log(user); // Pasha
+// console.log(user2); // Ivanov
 
 // Когда функция вызывается как new User(...), происходит следующее:
 
@@ -33,11 +35,6 @@
 
 // Таким образом, let user = new User("Jack") возвращает тот же результат, что и:
 
-// let user = {
-//   name: "Jack",
-//   isAdmin: false
-// };
-
 // console.log(new User('Alex'))
 // console.log(new User('Pasha'))
 // console.log(new User('Ann'))
@@ -49,17 +46,25 @@
 //   return { name: "Godzilla" };
 // }
 
-// console.log( new BigUser().name );  //
+// console.log(new BigUser().name); //
 
 // Задачи
 // 1) Возможно ли создать функции A и B, чтобы new A() == new B()?
-// function A() {}
-// function B() {}
+
+// let c = {};
+
+// function A() {
+//   return c;
+// }
+
+// function B() {
+//   return c;
+// }
 
 // let a = new A();
 // let b = new B();
 
-// alert( a == b ); // true
+// console.log(a == b); // true
 
 // 2) Создайте функцию-конструктор Calculator, которая создаёт объекты с тремя методами:
 // read() получает два аргумента и сохраняет их значение в свойствах объекта.
@@ -67,8 +72,53 @@
 // mul() возвращает произведение этих свойств.
 
 // Пример:
-// let calculator = new Calculator();
-// calculator.read();
+// function Calculator() {
+//   this.read = function (a, b) {
+//     this.a = a;
+//     this.b = b;
+//   };
 
-// alert( "Sum=" + calculator.sum() );
-// alert( "Mul=" + calculator.mul() );
+//   this.sum = function () {
+//     return this.a + this.b;
+//   };
+
+//   this.mul = function () {
+//     return this.a * this.b;
+//   };
+//   this.pasha = {
+//     age: 29,
+//   };
+// }
+
+// let calculator1 = {
+//   read: function (a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+//   sum: function () {
+//     return this.a + this.b;
+//   },
+//   mul: function () {
+//     return this.a * this.b;
+//   },
+// };
+
+// let calculator2 = {};
+// Object.assign(calculator2, calculator1); // { read: function, sum: function, mul: function }
+// let calculator3 = {};
+// Object.assign(calculator3, calculator1);
+
+// let calculator2 = new Calculator();
+// let calculator3 = new Calculator();
+
+// calculator3.read(5, 5);
+// calculator3.pasha.name = "Pasha";
+// console.log("2 Sum=" + calculator2.sum());
+// console.log("2 Mul=" + calculator2.mul());
+// console.log(calculator3);
+
+// calculator3.pasha.name = "Pezduk";
+// calculator3.read(2, 2);
+// console.log("3 Sum=" + calculator3.sum());
+// console.log("3 Mul=" + calculator3.mul());
+// console.log(calculator3);
