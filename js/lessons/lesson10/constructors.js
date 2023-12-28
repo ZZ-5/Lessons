@@ -5,14 +5,15 @@
 // Функция-конструктор должна выполняться только с помощью оператора "new".
 
 // function User(name) {
-//   this.name = name;
-//   this.isAdmin = false;
+//     this.name = name;
+//     this.isAdmin = false;
 // }
 
 // let user = new User("Jack");
 
 // console.log(user.name); // Jack
 // console.log(user.isAdmin); // false
+// console.log(user);
 
 // Когда функция вызывается как new User(...), происходит следующее:
 
@@ -22,20 +23,20 @@
 // Другими словами, new User(...) делает что-то вроде:
 
 // function User(name) {
-//   // this = {};  (неявно)
+//     // this = {};  (неявно)
 
-//   // добавляет свойства к this
-//   this.name = name;
-//   this.isAdmin = false;
+//     // добавляет свойства к this
+//     this.name = name;
+//     this.isAdmin = false;
 
-//   // return this;  (неявно)
+//     // return this;  (неявно)
 // }
 
-// Таким образом, let user = new User("Jack") возвращает тот же результат, что и:
+// // Таким образом, let user = new User("Jack") возвращает тот же результат, что и:
 
 // let user = {
-//   name: "Jack",
-//   isAdmin: false
+//     name: "Jack",
+//     isAdmin: false
 // };
 
 // console.log(new User('Alex'))
@@ -45,11 +46,11 @@
 // из конуструктора можно вернуть значение
 
 // function BigUser() {
-//   this.name = "John";
-//   return { name: "Godzilla" };
+//     this.name = "John";
+//     return { name: "Godzilla" };
 // }
 
-// console.log( new BigUser().name );  //
+// console.log(new BigUser().name);  //
 
 // Задачи
 // 1) Возможно ли создать функции A и B, чтобы new A() == new B()?
