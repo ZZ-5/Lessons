@@ -35,14 +35,11 @@
 
 // // Таким образом, let user = new User("Jack") возвращает тот же результат, что и:
 
-<<<<<<< HEAD
-=======
 // let user = {
 //     name: "Jack",
 //     isAdmin: false
 // };
 
->>>>>>> f423aace1415ba69dae133087f7f5aa0be5171e9
 // console.log(new User('Alex'))
 // console.log(new User('Pasha'))
 // console.log(new User('Ann'))
@@ -54,11 +51,7 @@
 //     return { name: "Godzilla" };
 // }
 
-<<<<<<< HEAD
-// console.log(new BigUser().name); //
-=======
 // console.log(new BigUser().name);  //
->>>>>>> f423aace1415ba69dae133087f7f5aa0be5171e9
 
 // Задачи
 // 1) Возможно ли создать функции A и B, чтобы new A() == new B()?
