@@ -4,17 +4,17 @@
 // Имя функции-конструктора должно начинаться с большой буквы.
 // Функция-конструктор должна выполняться только с помощью оператора "new".
 
-// function User(name, lastName) {
-//   this.name = name;
-//   this.lastname = "Ivannikov";
-//   this.isAdmin = false;
+// function User(name) {
+//     this.name = name;
+//     this.isAdmin = false;
 // }
 
 // let user = new User("Pasha");
 // let user2 = new User("Ivanov");
 
-// console.log(user); // Pasha
-// console.log(user2); // Ivanov
+// console.log(user.name); // Jack
+// console.log(user.isAdmin); // false
+// console.log(user);
 
 // Когда функция вызывается как new User(...), происходит следующее:
 
@@ -24,17 +24,25 @@
 // Другими словами, new User(...) делает что-то вроде:
 
 // function User(name) {
-//   // this = {};  (неявно)
+//     // this = {};  (неявно)
 
-//   // добавляет свойства к this
-//   this.name = name;
-//   this.isAdmin = false;
+//     // добавляет свойства к this
+//     this.name = name;
+//     this.isAdmin = false;
 
-//   // return this;  (неявно)
+//     // return this;  (неявно)
 // }
 
-// Таким образом, let user = new User("Jack") возвращает тот же результат, что и:
+// // Таким образом, let user = new User("Jack") возвращает тот же результат, что и:
 
+<<<<<<< HEAD
+=======
+// let user = {
+//     name: "Jack",
+//     isAdmin: false
+// };
+
+>>>>>>> f423aace1415ba69dae133087f7f5aa0be5171e9
 // console.log(new User('Alex'))
 // console.log(new User('Pasha'))
 // console.log(new User('Ann'))
@@ -42,11 +50,15 @@
 // из конуструктора можно вернуть значение
 
 // function BigUser() {
-//   this.name = "John";
-//   return { name: "Godzilla" };
+//     this.name = "John";
+//     return { name: "Godzilla" };
 // }
 
+<<<<<<< HEAD
 // console.log(new BigUser().name); //
+=======
+// console.log(new BigUser().name);  //
+>>>>>>> f423aace1415ba69dae133087f7f5aa0be5171e9
 
 // Задачи
 // 1) Возможно ли создать функции A и B, чтобы new A() == new B()?
