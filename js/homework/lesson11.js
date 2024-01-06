@@ -1,6 +1,5 @@
 // решить 5 задач на codewars 7 уровня. решения скопировать в файл
 
-
 // Задача 1:   https://www.codewars.com/kata/538835ae443aae6e03000547/train/javascript
 
 // Create a function add(n)/Add(n) which returns a function that always adds n to any number
@@ -12,14 +11,12 @@
 // var addThree = add(3);
 // addThree(3); // 6
 
-
 // РЕШЕНИЕ:
 // // function add(n) {
 //   return function (x) {
 //     return x + n;
 //   }
 // }
-
 
 // Задача 2:     https://www.codewars.com/kata/54b7c8d2cd7f51a839000ebf/train/javascript
 
@@ -44,13 +41,10 @@
 // });
 // will be [ 12, 13, 14, 6, 7 ].
 
-
 // РЕШЕНИЕ:
 // function processArray(arr, callback) {
 //     return arr.map(callback)
 // }
-
-
 
 // Задача 3:   https://www.codewars.com/kata/57e0206335e198f82b00001d/train/javascript
 
@@ -67,16 +61,12 @@
 // esrever("tacocat!") == "tacocat!"
 // Quick Note: A string will always be passed in (though it may be empty) so no need for error-checking other types.
 
-
-
 // РЕШЕНИЕ:    function esrever( str ){
 //   let arr = str.split('').reverse()
 //   let first = arr.shift();
 //   arr.push(first)
 //   return arr.join('')
 // }
-
-
 
 // Задача 4:    https://www.codewars.com/kata/5656b6906de340bd1b0000ac/train/javascript
 
@@ -90,16 +80,17 @@
 // a = "abcdefghijklmnopqrstuvwxyz"
 // longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-
-
-// РЕШЕНИЕ:    function longest(s1, s2) {
+// РЕШЕНИЕ:
+// function longest(s1, s2) {
 //   let arr = s1 + s2;
-//   arr = arr.split("").sort()
-//   let arr2 = []
-//   arr.map((item) => {
-//     if(arr2.includes(item)) {
-//        return 0;
-//        } else arr2.push(item)
-//   })
-//   return arr2.join('')
+//   arr = arr.split("").sort();
+//   let arr2 = [];
+
+//   arr.forEach((item) => {
+//     if (!arr2.includes(item)) {
+//       arr2.push(item);
+//     }
+//   });
+
+//   return arr2.join("");
 // }

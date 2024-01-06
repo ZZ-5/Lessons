@@ -1,7 +1,7 @@
 "user strict";
 // Map – это коллекция ключ/значение, как и Object. Но основное отличие в том, что Map позволяет использовать ключи любого типа.
 
-// new Map() – создаёт коллекцию.
+// let myMap = new Map()  // – создаёт коллекцию.
 // map.set(key, value) – записывает по ключу key значение value.
 // map.get(key) – возвращает значение по ключу или undefined, если ключ key отсутствует.
 // map.has(key) – возвращает true, если ключ key присутствует в коллекции, иначе false.
@@ -9,11 +9,21 @@
 // map.clear() – очищает коллекцию от всех элементов.
 // map.size – возвращает текущее количество элементов.
 
-// let map = new Map();
+// Есть соглашение, по которому мы работаем с Map только с использованием встроенных методов.
+// Действия, которые можно выполнить с помощью встроенных методов Map: добавить элемент, удалить элемент, узнать есть ли элемент в коллекции Map, очистить Map полность, узнать размер Map (текущее кол-во элементов), получить конкретное значение по ключу.
 
-// map.set("1", "str1");    // строка в качестве ключа
-// map.set(1, "num1");      // цифра как ключ
-// map.set(true, "bool1");  // булево значение как ключ
+// let map = new Map();
+// map.set("1", "str1"); // строка в качестве ключа
+// map.set(1, "num1"); // цифра как ключ
+// map.set(true, "bool1"); // булево значение как ключ
+// map.set(null, "123");
+// map.set([1, 2, 3], "123");
+
+// console.log(map);
+
+// Так лучше не добавлять элементы для Map
+// map['2'] = 'it is a 2'
+// map.name = 'Pasha'
 
 // // помните, обычный объект Object приводит ключи к строкам?
 // // Map сохраняет тип ключей, так что в этом случае сохранится 2 разных значения:
@@ -36,7 +46,6 @@
 // console.log(visitsCountMap.get(john)); // 123
 
 // Для перебора коллекции Map есть 3 метода:
-
 // map.keys() – возвращает итерируемый объект по ключам,
 // map.values() – возвращает итерируемый объект по значениям,
 // map.entries() – возвращает итерируемый объект по парам вида [ключ, значение], этот вариант используется по умолчанию в for..of
@@ -44,11 +53,15 @@
 // let recipeMap = new Map([
 //   ["огурец", 500],
 //   ["помидор", 350],
-//   ["лук",    50]
+//   ["лук", 50],
 // ]);
 
-// // перебор по ключам (овощи)
-// for (let vegetable of recipeMap.keys()) {
+// console.log(recipeMap);
+
+// перебор по ключам (овощи)
+// const arr = recipeMap.keys();
+
+// for (let vegetable of arr) {
 //   console.log(vegetable); // огурец, помидор, лук
 // }
 
@@ -58,7 +71,8 @@
 // }
 
 // // перебор по элементам в формате [ключ, значение]
-// for (let entry of recipeMap) { // то же самое, что и recipeMap.entries()
+// for (let entry of recipeMap.entries()) {
+//   // то же самое, что и recipeMap.entries()
 //   console.log(entry); // огурец,500 (и так далее)
 // }
 
@@ -71,12 +85,12 @@
 // При создании Map мы можем указать массив (или другой итерируемый объект) с парами ключ-значение для инициализации, как здесь:
 // массив пар [ключ, значение]
 // let map = new Map([
-//   ['1',  'str1'],
-//   [1,    'num1'],
-//   [true, 'bool1']
+//   ["1", "str1"],
+//   [1, "num1"],
+//   [true, "bool1"],
 // ]);
 
-// console.log( map.get('1') ); // str1
+// console.log(map); // str1
 
 // Если у нас уже есть обьект и мы хотим сделать из него Map, то это проще всего сделать через Object.entries
 // let obj = {
@@ -84,26 +98,28 @@
 //   age: 30,
 // };
 
-// let map = new Map(Object.entries(obj));
-// console.log(map.get("name")); // John
+// const entries = Object.entries(obj);
+
+// let map = new Map(entries);
+// console.log(map); // John
 
 // Также можно сделать обратную операцию из массива пар в обьект:
 // let prices = Object.fromEntries([
-//   ['banana', 1],
-//   ['orange', 2],
-//   ['meat', 4]
+//   ["banana", 1],
+//   ["orange", 2],
+//   ["meat", 4],
 // ]);
 
 // console.log(prices); // 2
 
 // или из Map в обьект:
 // let map = new Map();
-// map.set('banana', 1);
-// map.set('orange', 2);
-// map.set('meat', 4);
+// map.set("banana", 1);
+// map.set("orange", 2);
+// map.set("meat", 4);
 
 // let obj = Object.fromEntries(map); // создаём обычный объект (*)
-// console.log(obj.orange); // 2
+// console.log(obj); // 2
 
 // Объект Set – это особый вид коллекции: «множество» значений (без ключей), где каждое значение может появляться только один раз.
 // new Set(iterable) – создаёт Set, и если в качестве аргумента был предоставлен итерируемый объект (обычно это массив), то копирует его значения в новый Set.
@@ -121,12 +137,14 @@
 // let pete = { name: "Pete" };
 // let mary = { name: "Mary" };
 
-// // считаем гостей, некоторые приходят несколько раз
+// // // считаем гостей, некоторые приходят несколько раз
 // set.add(john);
 // set.add(pete);
 // set.add(mary);
-// set.add(john);
-// set.add(mary);
+
+// console.log(set);
+
+// set.delete(john);
 
 // // set хранит только 3 уникальных значения
 // console.log(set.size); // 3
@@ -140,11 +158,12 @@
 // Set также можно перебрать с помощью forEach:
 // let set = new Set(["апельсин", "яблоко", "банан"]);
 
-// for (let value of set) alert(value);
+// for (let value of set) console.log(value);
 
 // // то же самое с forEach:
 // set.forEach((value, valueAgain, set) => {
-//   alert(value);
+//   console.log(value);
+//   console.log(valueAgain);
 // });
 
 // Заметим забавную вещь. Функция в forEach у Set имеет 3 аргумента: значение value, потом снова то же самое значение valueAgain, и только потом целевой объект. Это действительно так, значение появляется в списке аргументов дважды.
@@ -157,6 +176,10 @@
 // set.values() – то же самое, что и set.keys(), присутствует для обратной совместимости с Map,
 // set.entries() – возвращает перебираемый объект для пар вида [значение, значение], присутствует для обратной совместимости с Map.
 
+// console.log(set.keys());
+// console.log(set.values());
+// console.log(set.entries());
+
 // Задачи:
 
 // 1) Допустим, у нас есть массив arr.
@@ -166,11 +189,24 @@
 //   /* ваш код */
 // }
 
-// let values = ["Hare", "Krishna", "Hare", "Krishna",
-//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// let values = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
 // ];
 
-// alert( unique(values) ); // Hare,Krishna,:-O
+// function unique(arr) {
+//   let set = new Set(arr);
+//   return set;
+// }
+
+// console.log(unique(values)); // Hare,Krishna,:-O
 
 // 2) Анаграммы – это слова, у которых те же буквы в том же количестве, но они располагаются в другом порядке.
 // Например:
@@ -181,17 +217,21 @@
 // Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.
 // Например:
 // let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
-// console.log( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
+
+// function aclean(arr) {}
+// console.log(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
 
 // 3) Мы хотели бы получить массив ключей map.keys() в переменную и далее работать с ними, например, применить метод .push.
 // Но это не выходит:
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 // let map = new Map();
 // map.set("name", "John");
-// let keys = map.keys();
+// let keys = map.keys(); // итерируемый обьект ключей Мапы
 
-// // Error: keys.push is not a function
-// // Ошибка: keys.push -- это не функция
+// keys = Array.from(keys); // делаем из итерируемого обьекта массив с помощью Array.from
+
 // keys.push("more");
+// console.log(keys);
 
 // Почему? Что нужно поправить в коде, чтобы вызов keys.push сработал?
