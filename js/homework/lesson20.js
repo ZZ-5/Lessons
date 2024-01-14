@@ -35,3 +35,16 @@ for (let args of decorMul.calls) {
 }
 
 // ваш код:
+
+// Пример того как вернуть функцию и вызвать в качестве переменной
+// function sum(a, b) {
+//   console.log(a, b);
+
+//   return function () {
+//     console.log(a, b);
+//     console.log("I am Pasha");
+//   };
+// }
+
+// let variable1 = sum(4, 5); //  console.log(4, 5) + в переменную variable положим функцию
+// variable1();
