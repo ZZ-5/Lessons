@@ -1,0 +1,36 @@
+// sass --watch index.scss:index.css - смотрит на .scss файл и обновляет .css файл по указанному пути.
+// Флаг --watch нужен чтобы sass подхватывал изменения "на лету".
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+button {
+  outline-width: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 30rem;
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #000;
+
+    padding: 1.5rem;
+    border-radius: 3px;
+  }
+}
