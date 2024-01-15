@@ -26,21 +26,13 @@
 // console.log(array.length); // длина массива
 // console.log(array[array.length - 1]); // последний элемент массива
 
-// let sumEven = 0;
-// for (let i = 0; i < array.length; i = i + 1) {
-//   if (array[i] % 2 === 0) {
-//     sumEven = sumEven + 1;
-//   }
-// }
-// console.log(sumEven);
-
 // 2. Найти сумму чисел в массиве:
 // const array = [
-//   1, 2, 3, 4, 5, -6, 7, 8, 9, 10, 11, -12, 13, -13, 13, 14, 14, -20, 23, 27, 43,
-//   57,
+//   1, 2, 3, 4, 5, -6, 7, 8, 9, 10, 11, -12, 13, -13, 13, 14, 14, -20,
 // ];
 
 // let sum = 0;
+
 // for (let i = 0; i < array.length; i++) {
 //   sum = sum + array[i];
 // }
@@ -48,13 +40,27 @@
 // console.log(sum);
 
 // 3. Найти количество входов подстроки в строку (сколько раз данная подстрока присутствует в исходной строке)
-// const str =
+// let str =
 //   "pashapashapashaasdfasdfpashapashapashaadsfasdfasfpashapashaadfasdfasdfasdfadfadsfpashaadfasdfpashalkljljkpashaljkljkljadsfasfpashalkjlkjasdfadspashalkjasdfasdflkjpashaadfasdlfkjpashapashaadsfasdflkjlkjasdfasdfpashapashaasdfasdfasdfpashapasha"; // result: 20
 // const substr = "pasha";
 
-// for (let i = 0; i < array.length; i++) {
+// let count = 0;
+// let substring = "";
 
+// for (let i = 0; i < str.length; i++) {
+//   substring = substring + str[i];
+
+//   if (substring === "pasha") {
+//     count++;
+//     substring = "";
+//   }
+
+//   if (str[i + 1] === "p") {
+//     substring = "";
+//   }
 // }
+
+// console.log(count);
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -77,18 +83,20 @@
 // const array = [
 //   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 13, 13, 14, 14, 20, 23, 27, 43, 57,
 // ];
-// let sumEven = 0;
+
+// let total = 0;
 // let i = 0;
 // while (i < array.length) {
+//   i++;
+
 //   if (array[i] % 2 === 0) {
-//     sumEven = sumEven + 1;
+//     total++;
 //   }
-//   i = i + 1;
 // }
 
-// console.log(sumEven);
+// console.log(total);
 
-// 2. Найти сумму чисел в массиве:
+// // 2. Найти сумму чисел в массиве:
 // const array = [
 //   1, 2, 3, 4, 5, -6, 7, 8, 9, 10, 11, -12, 13, -13, 13, 14, 14, -20, 23, 27, 43,
 //   57,
@@ -96,16 +104,38 @@
 
 // let sum = 0;
 // let i = 0;
-// // while - когда
+
 // while (i < array.length) {
 //   sum = sum + array[i];
 //   i++;
 // }
+
 // console.log(sum);
 
 // 3. Найти количество входов подстроки в строку (сколько раз данная подстрока присутствует в исходной строке)
-// const str = "pashapashapashaasdfasdfpashapashapashaadsfasdfasfpashapashaadfasdfasdfasdfadfadsfpashaadfasdfpashalkljljkpashaljkljkljadsfasfpashalkjlkjasdfadspashalkjasdfasdflkjpashaadfasdlfkjpashapashaadsfasdflkjlkjasdfasdfpashapashaasdfasdfasdfpashapasha"
+// const str =
+//   "pashapashapashaasdfasdfpashapashapashaadsfasdfasfpashapashaadfasdfasdfasdfadfadsfpashaadfasdfpashalkljljkpashaljkljkljadsfasfpashalkjlkjasdfadspashalkjasdfasdflkjpashaadfasdlfkjpashapashaadsfasdflkjlkjasdfasdfpashapashaasdfasdfasdfpashapasha"; // 20
 // const substr = "pasha";
+
+// let i = 0;
+// let count = 0;
+// let substring = "";
+
+// while (i < str.length) {
+//   substring = substring + str[i];
+
+//   if (substring === "pasha") {
+//     count++;
+//     substring = "";
+//   }
+
+//   if (str[i + 1] === "p") {
+//     substring = "";
+//   }
+//   i++;
+// }
+
+// console.log(count);
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -124,16 +154,15 @@
 
 // Задачи:
 // 1. Павел и Алексей собрались посидеть в дружеской обстановке и выпить пива. Поскольку Паша и Алексей являются хорошими друзьями, Павел отлично знает, что Алексею нельзя выпивать больше 3 литров пива за одну встречу, иначе обстановка перестаёт быть дружеской. Напишите цикл, который будет считать количество выпитого пива до отметки, когда Алексею хватит. Считать количество выпитого пива нужно в банках объемом 0.5л.
-// let beerCount = 0;
-// let liters = 0;
-// const vol = 0.5;
-// do {
-//   console.log("beerCount ", beerCount);
-//   liters = liters + vol;
-//   beerCount = beerCount + 1;
-// } while (liters < 3);
 
-// console.log("beerCount ", beerCount);
+// let sum = 0;
+// let banka = 0;
+// do {
+//   sum = sum + 0.5;
+//   banka++;
+// } while (sum <= 2.5);
+
+// console.log(banka);
 
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -182,7 +211,7 @@
 //   isAdmin: true,
 // };
 
-// for (let key in user) {
+// for (let key of user) {
 //   // ключи
 //   console.log(key); // name, age, isAdmin
 //   // значения ключей

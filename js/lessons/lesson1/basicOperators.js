@@ -21,19 +21,23 @@
 // Math.ceil - округление вверх (до целого)
 // console.log(Math.ceil(6.01)); // 7
 
-// // Math.floor - округление вниз (до целого)
+// // // Math.floor - округление вниз (до целого)
 // console.log(Math.floor(6.99)); // 6
 
-// // Math.round - округление до ближайшего целого числа
+// // // Math.round - округление до ближайшего целого числа
 // console.log(Math.round(6.5)); // 7
 
 // посчитать в массиве только четные числа
 // let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// function sumOfEven(a) {
-//   const res = a.map((i) => (i % 2 === 0 ? "Четное" : "Нечетное"));
+// function numberOfEven(arr) {
+//   let count = 0;
 
-//   return res;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0) count++;
+//   }
+
+//   return count;
 // }
 
-// console.log(sumOfEven(a));
+// console.log(numberOfEven(a));
