@@ -6,10 +6,12 @@
 //////////////////////////////////////////////////////////////////////
 
 // Function Expression (функциональное выражение). Задаём функцию и сразу кладём её в переменную sayHi
-//   const sayHi = function (a, b) {
-//     console.log(a + b);
-//     console.log(arguments);
-//   };
+// sayHi(2, 2);
+
+// const sayHi = function (a, b) {
+//   console.log(a + b);
+//   console.log(arguments);
+// };
 
 // sayHi(2, 2);
 
@@ -49,19 +51,27 @@
 // 2. У стрелочной функции нет arguments
 // Синтаксис: let func = (arg1, arg2, ...argN) => выражение;
 
-// function sum(a, b, ...array) {
-//   console.log(array);
+// function sum(a, b) {
 //   console.log(arguments);
 // }
 
-// const sum = function (a, b, ...array) {
-//   console.log(array);
+// function divide(a, b) {
+//   console.log(arguments);
+
+//   return a / b;
+// }
+
+// divide(9, 3);
+
+// const sum = function (a, b) {
 //   console.log(arguments);
 // };
 
-// const sum = (a, b, ...array) => {
-//   console.log(array);
+// sum(2, 2);
+
+// const sum = (a, b) => {
 //   console.log(arguments);
+//   console.log(this);
 // };
 
 // sum(2, 2, 3, 4, 5);
@@ -78,7 +88,6 @@
 //////////////////////////////////////////////////////////////////////
 
 // Named Function Expression
-
 // Поскольку функция - это обьект, у неё есть несколько полезных свойств:
 
 // name - имя функции
@@ -86,38 +95,36 @@
 //   console.log("Hi");
 // }
 
-// Что выведет?
-// console.log(sayHi.name);
+// // Что выведет?
+// console.log(sayHi.name); // sayHi
 
 // length - количество параметров функции
 
 // function f1(a) {}
+
 // function f2(a, b) {}
-// function many(a, b, ...more) {}
 
-// что выведет?
-// console.log(f1.length); //
-// console.log(f2.length); //
-// console.log(many.length); //
+// function many(a, b, ...more) {
+//   console.log(more);
+// }
+// many(2, 4, 5, 6, 7, 8);
 
-// let me = {
-//   name: "Pasha",
-// };
-
-// me.surname = "Ivannikov";
-
-// console.log(me);
+// // что выведет?
+// console.log(f1.length); // 1
+// console.log(f2.length); // 2
+// console.log(many.length); // 2
 
 // пользовательские свойства
 // function sayHi() {
 //   console.log("Hi");
 
 //   console.log("func counter ", counter);
+//   let counter = 0;
 
 //   // давайте посчитаем, сколько вызовов мы сделали
-//   sayHi.zalupa++;
+//   sayHi.counter++;
 // }
-// sayHi.zalupa = 0; // начальное значение
+// sayHi.counter = 0; // начальное значение
 
 // sayHi(); // Hi
 // sayHi(); // Hi
@@ -139,7 +146,7 @@
 // };
 
 // sayHi(); //
-// func(); //
+
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
