@@ -1,0 +1,49 @@
+{
+  "tagName": "div",
+  "className": "wrapper",
+  "children": [
+    {
+      "tagName": "div",
+      "className": "hangman",
+      "children": [
+        {
+          "tagName": "div",
+          "className": "gallows",
+          "children": null
+        },
+        {
+          "tagName": "div",
+          "className": "man",
+          "children": null
+        }
+      ]
+    },
+    {
+      "tagName": "div",
+      "className": "questions",
+      "children": [
+        {
+          "tagName": "div",
+          "className": "questions__question",
+          "children": [
+            {
+              "tagName": "ul",
+              "className": "questions__answer",
+              "children": null
+            },
+            {
+              "tagName": "div",
+              "className": "questions__title",
+              "children": null
+            }
+          ]
+        },
+        {
+          "tagName": "div",
+          "className": "questions__keyboard",
+          "children": null
+        }
+      ]
+    }
+  ]
+}

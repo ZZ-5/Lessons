@@ -22,7 +22,7 @@
 
 // const obj3 = {
 //   name: "Pasha",
-//   subrname: "Ivannikov",
+//   surname: "Ivannikov",
 //   1: 123, // ключ преобразуется к строке
 //   name1: {},
 //   name2: [1, 2, 3, 4],
@@ -32,18 +32,21 @@
 // };
 
 // obj3.age = 29;
+// obj3.friend = "Sergey";
 
-// console.log("obj3 ", obj3);
+// // console.log("obj3 ", obj3);
 
 // В обьект можно добавлять свойства после создания
 // const obj4 = {};
-// obj4.name = "Alex"; // так
+// // obj4.name = "Alex" + " " + "Sigeev"; // так
 // obj4.qwe = "Qwe";
+
+// // obj4.name = obj4.name + "Sigeev";
 
 // obj4["surname"] = "Ivanov"; // или так
 // obj4["asdf"] = "Pasha";
 
-// console.log("obj4 before ", obj4);
+// console.log(obj4.name);
 
 // console.log(obj4.name);
 // console.log(obj4.surname);
@@ -51,11 +54,16 @@
 // Создать обьект себя с именем, фамилией, возрастом, датой рождения
 
 // const me = {
-//   name: "Pasha",
-//   surname: "Ivannikov",
-//   age: 29,
-//   birthday: "4.9.1994",
+//   name: "Sergei",
+//   surname: "Solovev",
+//   age: 28,
+//   "date of birth": "09.12.1995",
 // };
+
+// console.log(me);
+
+// me.like = "Cola";
+// me["dislike"] = "Pivo";
 
 // me.likeBeer = "Beer4ik";
 // me["dislike"] = "Буян";
@@ -71,13 +79,16 @@
 // console.log("name" in obj4); // true/false
 // console.log(obj4.hasOwnProperty("name")); // true/false
 
+// console.log("name" in me);
+// console.log(me.hasOwnProperty("name"))
+
 // let obj = {
-//   test: undefined
+//   test: undefined,
 // };
 
-// // что выведет?
-// console.log(obj.test); // undefined
-// console.log("test" in obj); // true
+// // // что выведет?
+// console.log(obj.test); //
+// console.log("test" in obj); //
 
 // перебор свойств обьекта можно сделать циклом for...in
 
@@ -87,7 +98,7 @@
 //   isAdmin: true,
 // };
 
-// // for (key in obj) { }
+// // // for (let key in obj) { }
 // for (let key in user) {
 //   // ключи
 //   console.log(key); // name, age, isAdmin
@@ -209,8 +220,12 @@
 // let user3 = {};
 
 // Object.assign(user3, user);
-// console.log(user3);
+// // console.log(user3);
 
+// user3.friend.friend.name = "Eduard";
+
+// console.log(user3);
+// console.log(user);
 // console.log(user3 == user);
 
 // user3.friend.name = "Anna";
@@ -225,6 +240,13 @@
 //   lastName: "Ivannikov",
 //   age: 29,
 //   walk: function (distance) {
+//     console.log(`Могу пройти ${distance} км`);
+//   },
+// };
+
+// // альтернативный способ создания метода
+// let pasha2 = {
+//   walk() {
 //     console.log(`Могу пройти ${distance} км`);
 //   },
 // };
@@ -253,7 +275,7 @@
 //   name: "Alex",
 //   lastName: "Pivanov",
 //   age: 29,
-//   drink: function (liters) {
+//   drink(liters) {
 //     console.log(`Ну можно и по ${liters} сегодня`);
 //   },
 // };
@@ -276,14 +298,17 @@
 //   },
 // };
 
-// user.sayHi(); //
+// // user.sayHi(); //
 
 // let pasha = {
 //   name: "Pasha",
 //   age: 29,
 // };
 
-// pasha.sayHi = user.sayHi;
+// pasha.invoker = user.sayHi;
+
+// console.log(user.sayHi());
+// console.log(pasha.invoker());
 
 // console.log(pasha.sayHi == user.sayHi);
 
@@ -302,8 +327,8 @@
 // user.f = sayHi;
 // admin.f = sayHi;
 
-// // эти вызовы имеют  разное значение this
-// // "this" внутри функции - это объект "перед точкой"
+// эти вызовы имеют  разное значение this
+// "this" внутри функции - это объект "перед точкой"
 // user.f(); // John  (this == user)
 // admin.f(); // Admin  (this == admin)
 
@@ -340,24 +365,39 @@
 //   lastName: "Ivanov",
 // };
 
-// let count = (obj) => {
-//   const res = Object.keys(obj);
-//   return res.length;
+// function count(obj) {
+//   let total = 0;
+
+//   for (let key in obj) {
+//     total++;
+//   }
+
+//   return total;
+// }
+
+// Альтернативный способ
+// const count = (user) => Object.keys(user).length;
+
+// console.log(count(user)); // 3
+
+// 2. Напишите функцию isEmpty(obj), которая возвращает true, если у объекта больше 1 свойства, иначе возвращает false.
+// let schedule = {
+//   name: "John",
 // };
 
-// console.log(count(user)); // 2
+// function isEmpty(obj) {
+//   if (Object.keys(obj).length > 1) {
+//     console.log(true);
+//   } else {
+//     console.log(false);
+//   }
+// }
 
-// 2. Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
-// let schedule = {};
-
-// const isEmpty = (obj) => (Object.keys(obj).length ? false : true);
-
-// console.log(isEmpty(schedule)); // true
+// isEmpty(schedule); // true
 
 // schedule["8:15"] = "Wake up!";
 
-// console.log(schedule); //
-// console.log(isEmpty(schedule)); //
+// isEmpty(schedule); //
 
 // 3. Можно ли изменить объект, объявленный с помощью const? Как вы думаете?
 // const user = {
@@ -367,26 +407,36 @@
 // // это будет работать?
 // user.name = "Pete"; //
 
-// console.log(user);
+// console.log(user); //
 
 // 4. Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
-
 // let salaries = {
 //   John: 100,
 //   Ann: 160,
 //   Pete: 130,
+//   Alex: "123",
 // };
 
 // let sum = 0;
 
-// for (const key in salaries) {
-//   sum = sum + salaries[key];
+// console.log(salaries.John);
+// console.log(salaries["John"]);
+
+// for (let key in salaries) {
+//   if (typeof salaries[key] === "number") {
+// sum += salaries[key];
+//   }
 // }
 
-// // альтернативный способ
-// Object.values(salaries).reduce((sum, item) => (sum += item), 0);
+// console.log(sum);
 
-// console.log("sum is ", sum);
+// // альтернативный способ
+// const sum41 = Object.values(salaries).reduce((acc, value) => {
+//   if (typeof value === "number") acc += value;
+//   return acc;
+// }, 0);
+
+// console.log(sum41);
 
 // 5. Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
 // до вызова функции
@@ -396,23 +446,20 @@
 //   title: "My menu",
 // };
 
-// let multiplyNumeric = (obj) => {
+// function multiplyNumeric(obj) {
 //   for (let key in obj) {
 //     if (typeof obj[key] === "number") {
-//       obj[key] = obj[key] * 2;
+//       obj[key] *= 2;
 //     }
 //   }
-// };
-
+// }
 // multiplyNumeric(menu);
-
 // console.log(menu);
 
 // Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
 // P.S. Используйте typeof для проверки, что значение свойства числовое.
 
 // 6. Здесь функция makeUser возвращает объект. Каким будет результат при обращении к свойству объекта ref? Почему?
-// console.log(user1.walk());
 // function makeUser() {
 //   return {
 //     name: "John",
@@ -422,7 +469,7 @@
 
 // let user = makeUser();
 
-// console.log(user.ref.name); // John
+// console.log(user.ref.name); // ошибка
 
 // 7. Создайте объект calculator (калькулятор) с тремя методами:
 // read() (читать) запрашивает два значения и сохраняет их как свойства объекта с именами a и b.
@@ -439,15 +486,15 @@
 // };
 
 // let calculator = {
-//   read: (a, b) => {
-//     this["a"] = a;
-//     this["b"] = b;
+//   read(x, y) {
+//     this.a = x;
+//     this.b = y;
 //   },
-//   sum: function () {
-//     return this["a"] + this["b"];
+//   sum() {
+//     return this.a + this.b;
 //   },
-//   mul: () => {
-//     return this["a"] * this["b"];
+//   mul() {
+//     return this.a * this.b;
 //   },
 // };
 
@@ -455,20 +502,22 @@
 // console.log(calculator.sum());
 // console.log(calculator.mul());
 // console.log(calculator);
-// console.log(this);
 
 // 8. У нас есть объект ladder (лестница), который позволяет подниматься и спускаться:
 // let ladder = {
 //   step: 0,
 //   up() {
 //     this.step++;
+//     return this;
 //   },
 //   down() {
 //     this.step--;
+//     return this;
 //   },
 //   showStep: function () {
 //     // показывает текущую ступеньку
 //     console.log(this.step);
+//     return this;
 //   },
 // };
 
@@ -486,40 +535,3 @@
 // Измените код методов up, down и showStep таким образом, чтобы их вызов можно было сделать по цепочке, например так:
 
 // ladder.up().up().down().showStep().down().showStep(); // показывает 1 затем 0
-
-// let me = {
-//   name: "Pasha",
-//   lastName: "Ivannikov",
-//   age: 29,
-//   can: function (action) {
-//     console.log(
-//       `Привет, меня зовут ${this.name} ${this.lastName}, мне ${this.age} и я умею ${action}me `
-//     );
-//   },
-//   friend: {
-//     name: "Alex",
-//   },
-// };
-
-// let ivanov = {
-//   name1: "Alex",
-//   lastName1: "Ivanov",
-//   age1: 29,
-// };
-
-// ivanov.can = me.can;
-
-// me.weight = 88;
-// ivanov.weight = 90;
-
-// let obj = {};
-
-// for (let key in me) {
-//   obj[key] = me[key];
-// } - первый способ копирования обьекта
-
-// Object.assign(то, куда копируем, то, что копируем) -
-
-// Object.assign(obj, me, ivanov);
-
-// console.log(obj);
