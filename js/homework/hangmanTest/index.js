@@ -8,19 +8,21 @@ let root = document.getElementById("root");
 // реализовать метод, который пробегается по дереву компонентов и создает его
 function createNodes(objData) {
   if (!objData.children) {
+    // если children пустой, то создаем последний элемент и возвращаем
     const elem = document.createElement(objData.tagName);
     elem.className = objData.className;
     return elem;
   }
 
-  const elem = document.createElement(objData.tagName);
+  const elem = document.createElement(objData.tagName); // создаем элемент
   elem.className = objData.className;
 
   objData.children.forEach((child) => {
-    elem.append(createNodes(child));
+    // обходим дочерние узлы элемента
+    elem.append(createNodes(child)); // вызываем для каждого дочернего узла метод и добавляем результат в текущий элемент
   });
 
-  return elem;
+  return elem; // возвращаем текущий элемент
 }
 
 // вставим результат обхода обьекта данных в корневой тэг
