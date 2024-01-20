@@ -1,3 +1,4 @@
+"use strict";
 // В первой главе этого раздела мы упоминали, что существуют современные методы работы с прототипами.
 
 // Свойство __proto__ считается устаревшим, и по стандарту оно должно поддерживаться только браузерами.
@@ -79,36 +80,82 @@
 
 // Вот так это должно работать:
 
-// let dictionary = Object.create(null);
+// let dictionary = Object.create(null, {
+//   toString: {
+//     value: function () {
+//       return Object.keys(this).join(",");
+//     },
+//   },
+// });
 
-// // ваш код, который добавляет метод dictionary.toString
+// // // ваш код, который добавляет метод dictionary.toString
 
-// // добавляем немного данных
+// // // добавляем немного данных
 // dictionary.apple = "Apple";
 // dictionary.__proto__ = "test"; // здесь __proto__ -- это обычный ключ
 
-// // только apple и __proto__ выведены в цикле
-// for(let key in dictionary) {
-//   console.log(key); // "apple", затем "__proto__"
-// }
+// // // только apple и __proto__ выведены в цикле
+// // for (let key in dictionary) {
+// //   console.log(key); // "apple", затем "__proto__"
+// // }
 
-// // ваш метод toString в действии
-// console.log(dictionary); // "apple,__proto__"
+// // // ваш метод toString в действии
+// console.log(dictionary.toString()); // "apple,__proto__"
 
 // 2)
 // Давайте создадим новый объект rabbit:
 // function Rabbit(name) {
 //   this.name = name;
-// }
-// Rabbit.prototype.sayHi = function() {
+// } // prototype: { constructor: Rabbit }
+
+// Rabbit.prototype.sayHi = function () {
 //   console.log(this.name);
+// }; //  prototype: { constructor: Rabbit, sayHi: function }
+
+// let rabbit = new Rabbit("Rabbit"); // { name: 'Rabbit', __proto__: Rabbit.prototype }
+
+// // Все эти вызовы делают одно и тоже или нет?
+
+// rabbit.sayHi(); // Rabbit
+// Rabbit.prototype.sayHi(); // undefined
+// Object.getPrototypeOf(rabbit).sayHi(); // undefined
+// rabbit.__proto__.sayHi(); // undefined
+
+// function Animal() {
+//   this.eats = true;
+// } // Animal.prototype = { constructor: Animal }
+
+// let rabbit = new Animal();
+
+// // console.log(rabbit.jump); // undefined
+
+// Animal.prototype.jump = () => {
+//   console.log("i can jump");
 // };
 
-// let rabbit = new Rabbit("Rabbit");
+// Object.getPrototypeOf(rabbit).walk = () => {
+//   console.log("i can walk");
+// };
 
-// Все эти вызовы делают одно и тоже или нет?
+// rabbit.walk(); // i can walk
+// rabbit.jump(); // i can jump
 
-// rabbit.sayHi();
-// Rabbit.prototype.sayHi();
-// Object.getPrototypeOf(rabbit).sayHi();
-// rabbit.__proto__.sayHi();
+//
+// let animal = {
+//   eats: true,
+// };
+
+// let rabbit = {
+//   __proto__: animal,
+// };
+
+// animal.jump = () => {
+//   console.log("i can jump");
+// };
+
+// animal.walk = () => {
+//   console.log("i can walk");
+// };
+
+// rabbit.walk(); // i can walk
+// rabbit.jump(); // i can jump
