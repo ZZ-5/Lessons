@@ -278,16 +278,20 @@
 
 // 20) array.some(callback, thiaArg) - проверяет удовлетворяет ли хотя бы один элемент в массиве заданному условию в callback
 
+// ########################################################################################################################
+// ########################################################################################################################
+// ########################################################################################################################
+
 // Задачи:
 // 1) Что выведет console.log?
 // let fruits = ["Яблоки", "Груша", "Апельсин"];
 
-// // добавляем новое значение в "копию"
+// добавляем новое значение в "копию"
 // let shoppingCart = fruits;
 // shoppingCart.push("Банан");
 
-// // что в fruits?
-// console.log(fruits.length); // 4
+// что в fruits?
+// console.log(fruits.length); // ["Яблоки", "Груша", "Апельсин", "Банан"]
 
 // 2) Давайте произведём 5 операций с массивом.
 // Создайте массив styles с элементами «Джаз» и «Блюз».
@@ -298,28 +302,90 @@
 
 // let styles = ["Джаз", "Блюз"];
 // styles.push("Рок-н-ролл");
-// console.log(styles);
-// // splice(start, deleteCount, item1)
-// styles.splice(Math.floor(styles.length / 2), 0, "«Классика»");
-// console.log(styles);
-// console.log(styles.shift());
-// styles.unshift("Реп", "Регги");
-// console.log(styles);
+
+// let middle = Math.floor[styles.length / 2];
+
+// styles[middle] = "Классика";
+// let firstElement = styles.shift();
+// console.log(firstElement);
+
+// styles.unshift("Рэп", "Регги");
 
 // 3) Каков результат? Почему?
 // let arr = ["a", "b"];
 
 // arr.push(function () {
 //   console.log(this);
-// }); // ['a', 'b', function]
+// }); //
 
-// arr[2](); // [ 'a', 'b', [Function (anonymous)] ]
+// arr[2]();
 
 // 4) https://www.codewars.com/kata/5583090cbe83f4fd8c000051
+// function digitize(n) {
+//   n = String(n).split("").reverse();
+//   let arr = [];
+//   for (let i = 0; i < n.length; i++) {
+//     n[i] = +n[i];
+//     arr.push(n[i]);
+//   }
+//   return arr;
+// }
 // 5) https://www.codewars.com/kata/558fc85d8fd1938afb000014
+// function sumTwoSmallestNumbers(numbers) {
+//   numbers.sort((a, b) => a - b);
+//   return numbers[0] + numbers[1];
+// }
+
 // 6) https://www.codewars.com/kata/55fd2d567d94ac3bc9000064
+
 // 7) https://www.codewars.com/kata/5949481f86420f59480000e7
+// function oddOrEven(array) {
+//   let sum = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+//   }
+//   if (sum % 2 === 0) {
+//     return "even";
+//   } else return "odd";
+// }
 
 // 8) https://www.codewars.com/kata/57ea5b0b75ae11d1e800006c
+// function sortByLength(array) {
+//   return array.sort((a, b) => a.length - b.length);
+// }
 // 9) https://www.codewars.com/kata/545a4c5a61aa4c6916000755
+// function gimme(triplet) {
+//   let copy = triplet.slice(0);
+//   copy.sort((a, b) => a - b);
+//   let total = copy[1];
+//   return triplet.indexOf(total);
+// }
 // 10) https://www.codewars.com/kata/539ee3b6757843632d00026b
+
+// 11) Посчитать сумму массива методом
+// let arr = [10, 20, 30, 40, 50, undefined, null, "Alex", 100, 110];
+// let array = [];
+// for (let i = 0; i < arr.length; i++) {
+//   if (typeof arr[i] === "number") {
+//     array.push(arr[i]);
+//   }
+// }
+// let sum = array.reduce((a, b) => a + b, 0);
+// console.log(sum);
+
+// 12) Написать функцию greatestSalary, которая принимает обьект и выводит сотрудника, у которого самая большая зп в формате:
+// "Alex is a senior developer and his salary is 9999999". Если у сотрудника в качестве зарплаты массив ежемесячных зарплат, то нужно считать среднюю и сравнивать её.
+let obj = {
+  Alex: {
+    grade: "senior",
+    salary: [350000, 500000, 450000, 700000],
+  },
+  Serg: {
+    grade: "middle",
+    salary: 300000,
+  },
+  Paul: {
+    grade: "junior",
+    salary: [0, 120000, 150000, 999999],
+  },
+};

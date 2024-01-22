@@ -4,17 +4,25 @@
   "children": [
     {
       "tagName": "div",
-      "className": "hangman",
+      "className": "gallows",
       "children": [
         {
-          "tagName": "div",
-          "className": "gallows",
-          "children": null
+          "tagName": "img",
+          "alt": "gallows image",
+          "className": "gallows__img",
+          "src": "../assets/gallows.png"
         },
         {
           "tagName": "div",
           "className": "man",
-          "children": null
+          "children": [
+            {
+              "tagName": "img",
+              "alt": "gallows image",
+              "className": "man__img man__img_head",
+              "src": "../assets/head.png"
+            }
+          ]
         }
       ]
     },
