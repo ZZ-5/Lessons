@@ -298,40 +298,40 @@
 // console.log(rabbit.name);
 
 // 2) У нас есть класс Clock. Сейчас он выводит время каждую секунду
-class Clock {
-  constructor({ template }) {
-    this.template = template;
-  }
+// class Clock {
+//   constructor({ template }) {
+//     this.template = template;
+//   }
 
-  render() {
-    let date = new Date();
+//   render() {
+//     let date = new Date();
 
-    let hours = date.getHours();
-    if (hours < 10) hours = "0" + hours;
+//     let hours = date.getHours();
+//     if (hours < 10) hours = "0" + hours;
 
-    let mins = date.getMinutes();
-    if (mins < 10) mins = "0" + mins;
+//     let mins = date.getMinutes();
+//     if (mins < 10) mins = "0" + mins;
 
-    let secs = date.getSeconds();
-    if (secs < 10) secs = "0" + secs;
+//     let secs = date.getSeconds();
+//     if (secs < 10) secs = "0" + secs;
 
-    let output = this.template
-      .replace("h", hours)
-      .replace("m", mins)
-      .replace("s", secs);
+//     let output = this.template
+//       .replace("h", hours)
+//       .replace("m", mins)
+//       .replace("s", secs);
 
-    console.log(output);
-  }
+//     console.log(output);
+//   }
 
-  stop() {
-    clearInterval(this.timer);
-  }
+//   stop() {
+//     clearInterval(this.timer);
+//   }
 
-  start() {
-    this.render();
-    this.timer = setInterval(() => this.render(), 1000);
-  }
-}
+//   start() {
+//     this.render();
+//     this.timer = setInterval(() => this.render(), 1000);
+//   }
+// }
 
 // const clock = new Clock({ template: "h:m:s" });
 
@@ -366,11 +366,11 @@ class Clock {
 // - renderHangman() - рисует человечка по частям на основе текущего значения итератора
 // - gameOver() - вызывается когда мы ответили правильно, либо проиграли. рисует текст и кнопку "начать заново"
 
-class Hangman {
-  constructor() {}
+// class Hangman {
+//   constructor() {}
 
-  // createComponent(jsonObj) {
-  //   // пробежаться по jsonObj и сделать все createElement и append в соответствии со структурой обьекта
+//   // createComponent(jsonObj) {
+//   //   // пробежаться по jsonObj и сделать все createElement и append в соответствии со структурой обьекта
 
-  // }
-}
+//   // }
+// }
