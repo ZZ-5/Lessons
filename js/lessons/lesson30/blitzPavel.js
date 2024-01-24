@@ -30,6 +30,25 @@
 // - если массив отсортирован по возрастанию выведет "По возрастанию"
 // - если массив не отсортирован выведет "Не отсортирован"
 
+// let arr = [1, 2, 8, 5, 3, 6, 7, 4, 9, 0];
+
+// function isSortedAndHow(arr) {
+
+//   let string = arr.join("")
+//   let sortLowToHigh = arr.sort().join("")
+//   let sortHighToLow = arr.sort((a, b) => b - a).join("")
+
+//   if (string === sortLowToHigh) {
+//     return "По возрастанию";
+//   } else if (string === sortHighToLow) {
+//     return "По убыванию";
+//   } else
+//     return "Не отсортирован"
+
+// }
+
+// console.log(isSortedAndHow(arr));
+
 // 3) Написать функцию minValuesSum, которая находит сумму минимальных значений каждой строки двумерного массива
 // Пример:
 // [ [ 1, 2, 3, 4, 5 ]        #  minimum value of row is 1
@@ -68,16 +87,31 @@
 // 4) Написать функцию matrixAddition(arr1, arr2), которая сложит попарно все числа в матрицах
 
 // Пример:
-// matrixAddition(
-//   [ [1, 2, 3],
-//     [3, 2, 1],
-//     [1, 1, 1] ],
+// matrixAddition([[1, 2, 3], [3, 2, 1], [1, 1, 1]], /* + */ [[2, 2, 1], [3, 2, 3], [1, 1, 3]])
+
+
+// let arr1 = [[1, 2, 3],
+// [3, 2, 1],
+// [1, 1, 1]]
 // //      +
-//   [ [2, 2, 1],
-//     [3, 2, 3],
-//     [1, 1, 3] ] )
+// let arr2 = [[2, 2, 1],
+// [3, 2, 3],
+// [1, 1, 3]]
+
 
 // // returns:
-//   [ [3, 4, 4],
-//     [6, 4, 4],
-//     [2, 2, 4] ]
+// // [[3, 4, 4],[6, 4, 4],[2, 2, 4]]
+
+// function matrixAddition(arr1, arr2) {
+//     let res = arr1.map((item1, index1) => {
+//
+//         return item1.map((item2, index2) => {
+//             // console.log(arr2[index1][index2]);
+//             return item2 + arr2[index1][index2]
+//         })
+//     });
+//     return res
+// }
+
+
+// console.log(matrixAddition(arr1, arr2));
