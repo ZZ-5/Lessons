@@ -16,18 +16,20 @@
 //   },
 // };
 
+// function getAverage(arr) {
+//   let sum = arr.reduce((a, b) => a + b, 0);
+//   return sum / arr.length;
+// }
+
 // function greatestSalary(obj) {
 //   let employee = "";
 //   let employeeGrade = "";
 //   let maxSalary = 0;
 
-//   function getAverage(arr) {
-//     let sum = arr.reduce((a, b) => a + b, 0);
-//     return sum / arr.length;
-//   }
-
 //   for (let key in obj) {
 //     let salary = obj[key].salary;
+
+//     console.log("salary ", salary);
 
 //     salary = Array.isArray(salary) ? getAverage(salary) : obj[key].salary;
 
@@ -40,8 +42,6 @@
 
 //   return `${employee} is a ${employeeGrade} developer and his salary is ${maxSalary}`;
 // }
-
-// console.log(`${employee} is a ${grade} developer and his salary is ${maxSalary}`);
 
 // console.log(greatestSalary(obj));
 

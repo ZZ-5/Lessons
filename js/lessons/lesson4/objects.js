@@ -38,10 +38,10 @@
 
 // В обьект можно добавлять свойства после создания
 // const obj4 = {};
-// // obj4.name = "Alex" + " " + "Sigeev"; // так
+// obj4.name = "Alex" + " " + "Sigeev"; // так
 // obj4.qwe = "Qwe";
 
-// // obj4.name = obj4.name + "Sigeev";
+// obj4.name = obj4.name + "Sigeev";
 
 // obj4["surname"] = "Ivanov"; // или так
 // obj4["asdf"] = "Pasha";
