@@ -115,3 +115,30 @@
 
 
 // console.log(matrixAddition(arr1, arr2));
+
+// // Пример:
+// // matrixAddition(
+// let arr1 = [[1, 2, 3],
+// [3, 2, 1],
+// [1, 1, 1]]
+// // //      +
+// let arr2 = [[2, 2, 1],
+// [3, 2, 3],
+// [1, 1, 3]]
+
+// // // returns:
+// //   [ [3, 4, 4],
+// //     [6, 4, 4],
+// //     [2, 2, 4] ]
+
+// function matrixAddition(arr1, arr2) {
+//   let result = []
+//   for (let i = 0; i < arr1.length; i++) {
+//     for (let j = 0; (j < arr2[i].length); j++) {
+//       result = (arr1[i][j] + arr2[i][j]);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(matrixAddition(arr1, arr2));
