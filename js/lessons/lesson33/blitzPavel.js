@@ -116,12 +116,18 @@
 
 // 9) Напишите функцию для рекурсивного поиска максимального числа в массиве.
 
-function findMax(arr) {
-  if (arr.length === 1) return arr[0]
+// function findMax(arr) {
+//   if (arr.length === 1) return arr[0]
 
-}
+//   else if (arr[arr.length - 1] > arr[arr.length - 2]) {
+//     arr[arr.length - 2] = arr[arr.length - 1]
+//   }
+//   arr.pop()
+//   return findMax(arr)
 
-console.log(findMax([3, 1, 8, 2, 4])); // Выведет: 8
+// }
+
+// console.log(findMax([77, 3, 1, 5, 8, 4, 115, 7, 9, 3, 1, 10, 15, 22, 2215])); // Выведет: 2215
 
 // 10) Напишите функцию, которая генерирует все подмножества множества. Если множество имеет n элементов, то у него есть 2^n подмножества.
 
